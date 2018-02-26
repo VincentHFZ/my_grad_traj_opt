@@ -24,7 +24,14 @@ TrajectoryGenerator::TrajectoryGenerator() {}
 TrajectoryGenerator::~TrajectoryGenerator() {}
 
 
+Eigen::MatrixXd TrajectoryGenerator::PolyQPGeneration(const MatrixXd &path,
+                                                      const Vector3d &vel,
+                                                      const Vector3d &acc,
+                                                      const VectorXd &time,
+                                                      const int &type)
+{
 
+}
 
 
 
@@ -58,5 +65,17 @@ Eigen::MatrixXd TrajectoryGenerator::getR() {
 }
 
 Eigen::MatrixXd TrajectoryGenerator::getRff() {
+    return _Rff;
+}
 
+Eigen::MatrixXd TrajectoryGenerator::getRpp() {
+    return _Rpp;
+}
+
+Eigen::MatrixXd TrajectoryGenerator::getRfp() {
+    return _Rfp;
+}
+
+Eigen::MatrixXd TrajectoryGenerator::getRpf() {
+    return _Rpf;
 }

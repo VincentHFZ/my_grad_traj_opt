@@ -40,15 +40,21 @@ public:
     TrajectoryGenerator();
     ~TrajectoryGenerator();
 
-    Eigen::MatrixXd PolyQPGenration(const Eigen::MatrixXd &pathCorridor,
-                                    const Eigen::MatrixXd &pathConnect,
-                                    const Eigen::VectorXd &radius,
-                                    const Eigen::VectorXd &pathRadius,
-                                    const Eigen::VectorXd &time,
-                                    const Eigen::VectorXd &vel,
-                                    const Eigen::MatrixXd &acc,
-                                    const double maxVel,
-                                    const double maxAcc );
+    Eigen::MatrixXd PolyQPGeneration(const Eigen::MatrixXd &path,
+                                     const Eigen::Vector3d &vel,
+                                     const Eigen::Vector3d &acc,
+                                     const Eigen::VectorXd &time,
+                                     const int &type);
+
+    Eigen::MatrixXd PloyCoeffGeneration(const Eigen::MatrixXd &pathCorridor,
+                                        const Eigen::MatrixXd &pathConnect,
+                                        const Eigen::VectorXd &radius,
+                                        const Eigen::VectorXd &pathRadius,
+                                        const Eigen::VectorXd &time,
+                                        const Eigen::VectorXd &vel,
+                                        const Eigen::MatrixXd &acc,
+                                        const double maxVel,
+                                        const double maxAcc );
     std::vector<double> getCost();
 
     void StackOptiDep();        // Stack the optimization's dependency, the intermediate matrix and initial derivatives
